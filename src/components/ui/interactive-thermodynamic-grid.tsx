@@ -16,28 +16,26 @@ interface ThermodynamicGridProps extends React.HTMLAttributes<HTMLDivElement> {
 
 // Color palettes for each theme
 const DARK_PALETTE = {
-  base: { r: 5, g: 5, b: 5 },
-  bgHex: "#050505",
-  coldDot: "#18181b",
+  base: { r: 16, g: 19, b: 20 }, // ~ #101314
+  bgHex: "#101314",
+  coldDot: "#243033",
   stops: [
-    { t: 0.0, r: 5, g: 5, b: 5 },
-    { t: 0.25, r: 255, g: 95, b: 0 },
-    { t: 0.5, r: 255, g: 140, b: 0 },
-    { t: 0.75, r: 255, g: 195, b: 0 },
-    { t: 1.0, r: 255, g: 212, b: 0 },
+    { t: 0.0, r: 16, g: 19, b: 20 }, // background
+    { t: 0.35, r: 187, g: 213, b: 218 }, // #bbd5da
+    { t: 0.7, r: 223, g: 241, b: 241 }, // #dff1f1
+    { t: 1.0, r: 255, g: 0, b: 0 }, // #ff0000
   ],
 };
 
 const LIGHT_PALETTE = {
-  base: { r: 236, g: 232, b: 226 },
-  bgHex: "#ece8e2",
-  coldDot: "#d4cfc8",
+  base: { r: 245, g: 245, b: 245 }, // #f5f5f5
+  bgHex: "#f5f5f5",
+  coldDot: "#bbd5da",
   stops: [
-    { t: 0.0, r: 236, g: 232, b: 226 },
-    { t: 0.25, r: 200, g: 80, b: 0 },
-    { t: 0.5, r: 220, g: 110, b: 0 },
-    { t: 0.75, r: 240, g: 160, b: 0 },
-    { t: 1.0, r: 255, g: 190, b: 0 },
+    { t: 0.0, r: 245, g: 245, b: 245 }, // paper
+    { t: 0.35, r: 223, g: 241, b: 241 }, // mist
+    { t: 0.7, r: 187, g: 213, b: 218 }, // blue
+    { t: 1.0, r: 255, g: 0, b: 0 }, // red
   ],
 };
 
@@ -88,7 +86,7 @@ const ThermodynamicGrid = ({
       const stops = paletteRef.current.stops;
       
       if (t <= 0) return `rgb(${stops[0].r}, ${stops[0].g}, ${stops[0].b})`;
-      if (t >= 1) return `rgb(${stops[4].r}, ${stops[4].g}, ${stops[4].b})`;
+      if (t >= 1) return `rgb(${stops[stops.length - 1].r}, ${stops[stops.length - 1].g}, ${stops[stops.length - 1].b})`;
       
       for (let i = 0; i < stops.length - 1; i++) {
         if (t >= stops[i].t && t <= stops[i+1].t) {
@@ -102,7 +100,7 @@ const ThermodynamicGrid = ({
           return `rgb(${r}, ${g}, ${b})`;
         }
       }
-      return `rgb(255, 212, 0)`;
+      return `rgb(255, 0, 0)`;
     };
 
     const resize = () => {

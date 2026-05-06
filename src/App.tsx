@@ -19,16 +19,9 @@ export default function App() {
         {/* Global Thermodynamic Background — single canvas for entire site */}
         <div className="fixed inset-0 z-[-1]">
           <ThermodynamicGrid
-            resolution={12}
+            resolution={10}
             coolingFactor={0.96}
             className="w-full h-full"
-          />
-          {/* Global gradient overlay for depth and contrast */}
-          <div
-            className="absolute inset-0 pointer-events-none transition-colors duration-500"
-            style={{
-              background: `linear-gradient(to bottom, var(--gradient-overlay-from), var(--gradient-overlay-via), var(--gradient-overlay-to))`,
-            }}
           />
         </div>
 
