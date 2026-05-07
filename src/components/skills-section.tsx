@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import antigravityIcon from "@/assets/icons/antigravity.svg";
 import lovableIcon from "@/assets/icons/lovable.svg";
 import powerbiIcon from "@/assets/icons/powerbi.svg";
+import vscodeIcon from "@/assets/icons/vscode.svg";
 
 interface SkillsSectionProps {
   isDark: boolean;
@@ -17,7 +18,9 @@ const allSkills: Skill[] = [
   { name: "Arduino", cdn: "arduino", color: "#00878F" },
   { name: "C++", cdn: "cplusplus", color: "#00599C" },
   { name: "Claude Code", cdn: "claude", color: "#D97757" },
+  { name: "Codex", cdn: "codex", color: "#FFFFFF" },
   { name: "CrewAI", cdn: "crewai", color: "#FF4A00" },
+  { name: "Cursor", cdn: "cursor", color: "#FFFFFF" },
   { name: "Docker", cdn: "docker", color: "#2496ED" },
   { name: "ElevenLabs", cdn: "elevenlabs", color: "#FFFFFF" },
   { name: "ESP32", cdn: "espressif", color: "#E7352C" },
@@ -35,6 +38,8 @@ const allSkills: Skill[] = [
   { name: "N8n", cdn: "n8n", color: "#EA4B71" },
   { name: "Next.js", cdn: "nextdotjs", color: "#FFFFFF" },
   { name: "Node.js", cdn: "nodedotjs", color: "#5FA04E" },
+  { name: "Ollama", cdn: "ollama", color: "#FFFFFF" },
+  { name: "OpenAI", cdn: "openai", color: "#FFFFFF" },
   { name: "OpenCV", cdn: "opencv", color: "#5C3EE8" },
   { name: "PHP", cdn: "php", color: "#777BB4" },
   { name: "Power BI", local: powerbiIcon, color: "#F2C811" },
@@ -50,6 +55,7 @@ const allSkills: Skill[] = [
   { name: "TypeScript", cdn: "typescript", color: "#3178C6" },
   { name: "Vercel", cdn: "vercel", color: "#FFFFFF" },
   { name: "Vite", cdn: "vite", color: "#646CFF" },
+  { name: "VS Code", local: vscodeIcon, color: "#007ACC" },
 ];
 
 const SIMPLE_ICONS_CDN = "https://cdn.simpleicons.org";
@@ -92,30 +98,20 @@ export default function SkillsSection({ isDark }: SkillsSectionProps) {
             {allSkills.map((skill, i) => (
               <div
                 key={skill.name}
-                className="group relative rounded-xl flex flex-col items-center justify-center gap-3 py-7 px-4 border transition-all duration-300 cursor-pointer animate-fade-up opacity-0"
+                className="group relative rounded-xl flex flex-col items-center justify-center gap-3 py-7 px-4 border border-[var(--border-subtle)] bg-[var(--card)] hover:border-[var(--border-subtle-hover)] transition-all duration-300 cursor-pointer animate-fade-up opacity-0"
                 style={{
                   animationDelay: `${(i % 12) * 50 + 100}ms`,
-                  background: "var(--surface-subtle)",
-                  borderColor: "var(--border-subtle)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "var(--surface-subtle-hover)";
-                  e.currentTarget.style.borderColor = "var(--border-subtle-hover)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "var(--surface-subtle)";
-                  e.currentTarget.style.borderColor = "var(--border-subtle)";
                 }}
               >
                 <img
                   src={getIconSrc(skill, isDark)}
                   alt={skill.name}
-                  className="w-10 h-10 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                  className="w-10 h-10 object-contain opacity-100 group-hover:opacity-40 transition-opacity duration-300"
                   loading="lazy"
                   draggable={false}
                 />
                 <span
-                  className="font-[var(--font-display)] text-[11px] font-medium tracking-wide text-center leading-tight opacity-40 group-hover:opacity-90 transition-opacity duration-300 select-none"
+                  className="font-[var(--font-display)] text-[11px] font-medium tracking-wide text-center leading-tight opacity-100 group-hover:opacity-40 transition-opacity duration-300 select-none"
                   style={{ color: "var(--foreground)" }}
                 >
                   {skill.name}
