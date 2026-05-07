@@ -4,6 +4,7 @@ import lovableIcon from "@/assets/icons/lovable.svg";
 import powerbiIcon from "@/assets/icons/powerbi.svg";
 import vscodeIcon from "@/assets/icons/vscode.svg";
 import codexIcon from "@/assets/icons/codex.svg";
+import openaiIcon from "@/assets/icons/openai.svg";
 
 interface SkillsSectionProps {
   isDark: boolean;
@@ -40,7 +41,7 @@ const allSkills: Skill[] = [
   { name: "Next.js", cdn: "nextdotjs", color: "#FFFFFF" },
   { name: "Node.js", cdn: "nodedotjs", color: "#5FA04E" },
   { name: "Ollama", cdn: "ollama", color: "#FFFFFF" },
-  { name: "OpenAI", cdn: "openai", color: "#FFFFFF" },
+  { name: "OpenAI", local: openaiIcon, color: "#FFFFFF" },
   { name: "OpenCV", cdn: "opencv", color: "#5C3EE8" },
   { name: "PHP", cdn: "php", color: "#777BB4" },
   { name: "Power BI", local: powerbiIcon, color: "#F2C811" },
