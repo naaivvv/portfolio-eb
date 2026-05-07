@@ -160,18 +160,7 @@ export default function AboutSection() {
                 {quickStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="text-center p-4 rounded-xl glass transition-all duration-300 hover:scale-[1.03]"
-                    style={{
-                      border: "1px solid var(--border-subtle)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = "var(--glass-hover-border)";
-                      e.currentTarget.style.boxShadow = "0 0 20px var(--glass-hover-shadow)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = "var(--border-subtle)";
-                      e.currentTarget.style.boxShadow = "none";
-                    }}
+                    className="text-center p-4 rounded-xl glass glass-hover"
                   >
                     <stat.icon size={18} className="mx-auto mb-2" style={{ color: "var(--primary)" }} />
                     <div className="text-2xl font-bold font-[var(--font-display)]" style={{ color: "var(--foreground)" }}>

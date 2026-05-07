@@ -51,10 +51,10 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
   return (
     <nav
       className={cn(
-        "fixed z-50 transition-all duration-300",
+        "fixed z-50 transition-all duration-300 left-0 right-0 mx-auto w-full md:w-[calc(100%-2rem)] max-w-6xl",
         scrolled
-          ? "top-2 left-0 right-0 mx-auto w-full md:w-[calc(100%-2rem)] max-w-6xl glass"
-          : "top-0 left-0 right-0 bg-transparent"
+          ? "top-2 glass"
+          : "top-0 bg-transparent"
       )}
       style={{
         borderColor: scrolled ? "var(--brutal-border)" : "transparent",
