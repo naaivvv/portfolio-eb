@@ -470,7 +470,7 @@ export default function HeroSection({ isDark }: HeroSectionProps) {
               <div className="flex items-center gap-2">
                 <Shapes size={16} style={{ color: "var(--primary)" }} />
                 <span className="text-xs font-extrabold uppercase tracking-wide" style={{ color: "var(--foreground)" }}>
-                  Generative Art
+                  Generative Geometry
                 </span>
               </div>
               <div className="flex items-center gap-2">

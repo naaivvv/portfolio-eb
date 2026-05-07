@@ -13,32 +13,32 @@
 
   --background: #101314;
   --foreground: #f5f5f5;
-  
+
   --card: #1a2022;
   --card-foreground: #f5f5f5;
-  
+
   --muted: #243033;
   --muted-foreground: #dff1f1;
-  
+
   --primary: #ff0000;
   --primary-foreground: #f5f5f5;
-  
+
   --secondary: #bbd5da;
   --secondary-foreground: #080808;
-  
+
   --accent: #dff1f1;
   --accent-foreground: #080808;
-  
+
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  
+
   --border: #f5f5f5;
   --input: #243033;
   --ring: rgba(255, 0, 0, 0.55);
-  
+
   /* Radius */
   --radius: 0.375rem;
-  
+
   /* Typography */
   --font-display: "Manrope", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -49,51 +49,51 @@
   --glass-hover-bg: #243033;
   --glass-hover-border: #ff0000;
   --glass-hover-shadow: #ff0000;
-  
+
   --surface-subtle: #182023;
   --surface-subtle-hover: #243033;
   --border-subtle: #dff1f1;
   --border-subtle-hover: #ff0000;
-  
+
   --brutal-border: #f5f5f5;
   --brutal-shadow: #ff0000;
   --brutal-shadow-strong: #dff1f1;
-  
+
   --chat-bubble-bg: #182023;
   --chat-input-bg: #111719;
   --chat-input-border: #f5f5f5;
   --chat-input-shadow: 8px 8px 0 var(--brutal-shadow);
   --badge-overlay-bg: #101314;
-  
+
   --scrollbar-track: #101314;
   --scrollbar-thumb: #bbd5da;
   --scrollbar-thumb-hover: #ff0000;
-  
+
   --selection-bg: #ff0000;
   --selection-color: #f5f5f5;
-  
+
   --code-bg: #243033;
   --code-border: #bbd5da;
   --pre-bg: #080808;
   --pre-border: #dff1f1;
   --blockquote-bg: #182023;
-  
+
   --table-header-bg: #243033;
   --table-border: #bbd5da;
   --table-header-border: #dff1f1;
   --table-cell-border: rgba(223, 241, 241, 0.22);
   --table-row-hover: rgba(255, 0, 0, 0.12);
-  
+
   --strong-color: #ffffff;
   --em-color: #dff1f1;
   --grid-dot-color: #243033;
   --grid-pattern-line: rgba(223, 241, 241, 0.12);
   --neon-subtle-shadow: rgba(255, 0, 0, 0.55);
-  
+
   --gradient-overlay-from: rgba(16, 19, 20, 0.70);
   --gradient-overlay-via: rgba(16, 19, 20, 0.40);
   --gradient-overlay-to: rgba(16, 19, 20, 0.90);
-  
+
   /* Text specific variables for contrast */
   --text-secondary: #bbd5da;
   --text-accent: #dff1f1;
@@ -103,82 +103,87 @@
 [data-theme="light"] {
   --background: #f5f5f5;
   --foreground: #080808;
-  
+
   --card: #f5f5f5;
   --card-foreground: #080808;
-  
+
   --muted: #dff1f1;
-  --muted-foreground: #1c2b30; /* Darker variant for contrast */
-  
+  --muted-foreground: #1c2b30;
+  /* Darker variant for contrast */
+
   --primary: #ff0000;
   --primary-foreground: #f5f5f5;
-  
-  --secondary: #bbd5da;
+
+  --secondary: #738386;
   --secondary-foreground: #080808;
-  
+
   --accent: #175454;
   --accent-foreground: #f5f5f5;
-  
+
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  
+
   --border: #080808;
   --input: #dff1f1;
   --ring: rgba(255, 0, 0, 0.45);
-  
+
   --glass-bg: #f5f5f5;
   --glass-border: #080808;
   --glass-hover-bg: #dff1f1;
   --glass-hover-border: #ff0000;
   --glass-hover-shadow: #ff0000;
-  
+
   --surface-subtle: #dff1f1;
   --surface-subtle-hover: #bbd5da;
   --border-subtle: #080808;
   --border-subtle-hover: #ff0000;
-  
+
   --brutal-border: #080808;
   --brutal-shadow: #ff0000;
   --brutal-shadow-strong: #1a6273;
-  
+
   --chat-bubble-bg: #f5f5f5;
   --chat-input-bg: #f5f5f5;
   --chat-input-border: #080808;
   --chat-input-shadow: 8px 8px 0 var(--brutal-shadow);
   --badge-overlay-bg: #f5f5f5;
-  
+
   --scrollbar-track: #f5f5f5;
-  --scrollbar-thumb: #1a6273; /* Darker thumb */
+  --scrollbar-thumb: #1a6273;
+  /* Darker thumb */
   --scrollbar-thumb-hover: #ff0000;
-  
+
   --selection-bg: #ff0000;
   --selection-color: #f5f5f5;
-  
+
   --code-bg: #dff1f1;
   --code-border: #080808;
   --pre-bg: #dff1f1;
   --pre-border: #080808;
   --blockquote-bg: #dff1f1;
-  
+
   --table-header-bg: #dff1f1;
   --table-border: #080808;
   --table-header-border: #080808;
   --table-cell-border: rgba(8, 8, 8, 0.18);
   --table-row-hover: rgba(255, 0, 0, 0.08);
-  
+
   --strong-color: #080808;
-  --em-color: #175454; /* Darker variant */
+  --em-color: #175454;
+  /* Darker variant */
   --grid-dot-color: #1a6273;
   --grid-pattern-line: rgba(8, 8, 8, 0.10);
   --neon-subtle-shadow: rgba(255, 0, 0, 0.35);
-  
+
   --gradient-overlay-from: rgba(245, 245, 245, 0.70);
   --gradient-overlay-via: rgba(245, 245, 245, 0.30);
   --gradient-overlay-to: rgba(245, 245, 245, 0.85);
 
   /* Darker text variants for light mode */
-  --text-secondary: #1a6273; /* Darker blue */
-  --text-accent: #175454; /* Darker cyan */
+  --text-secondary: #1a6273;
+  /* Darker blue */
+  --text-accent: #175454;
+  /* Darker cyan */
 }
 
 
