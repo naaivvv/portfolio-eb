@@ -21,7 +21,7 @@ export default async function handler(req: Request) {
       headers: {
         "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://edwinbayog-portfolio.vercel.app",
+        "HTTP-Referer": "https://edwin-bayog.vercel.app",
         "X-Title": "Edwin Bayog Portfolio",
       },
       body: JSON.stringify({
