@@ -3,6 +3,7 @@ import antigravityIcon from "@/assets/icons/antigravity.svg";
 import lovableIcon from "@/assets/icons/lovable.svg";
 import powerbiIcon from "@/assets/icons/powerbi.svg";
 import vscodeIcon from "@/assets/icons/vscode.svg";
+import codexIcon from "@/assets/icons/codex.svg";
 
 interface SkillsSectionProps {
   isDark: boolean;
@@ -18,7 +19,7 @@ const allSkills: Skill[] = [
   { name: "Arduino", cdn: "arduino", color: "#00878F" },
   { name: "C++", cdn: "cplusplus", color: "#00599C" },
   { name: "Claude Code", cdn: "claude", color: "#D97757" },
-  { name: "Codex", cdn: "codex", color: "#FFFFFF" },
+  { name: "Codex", local: codexIcon, color: "#FFFFFF" },
   { name: "CrewAI", cdn: "crewai", color: "#FF4A00" },
   { name: "Cursor", cdn: "cursor", color: "#FFFFFF" },
   { name: "Docker", cdn: "docker", color: "#2496ED" },
