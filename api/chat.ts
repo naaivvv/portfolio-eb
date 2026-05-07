@@ -25,7 +25,7 @@ export default async function handler(req: Request) {
         "X-Title": "Edwin Bayog Portfolio",
       },
       body: JSON.stringify({
-        model: "google/gemini-2.0-flash-lite-preview-02-05:free",
+        model: "meta-llama/llama-3.3-70b-instruct:free",
         messages: body.messages,
         stream: true,
         max_tokens: 400,
