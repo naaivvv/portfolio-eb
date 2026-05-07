@@ -25,9 +25,11 @@ export default async function handler(req: Request) {
         "X-Title": "Edwin Bayog Portfolio",
       },
       body: JSON.stringify({
-        model: "openrouter/free",
+        model: "google/gemini-2.0-flash-lite-preview-02-05:free",
         messages: body.messages,
         stream: true,
+        max_tokens: 400,
+        temperature: 0.7,
       }),
     });
 
