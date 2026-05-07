@@ -474,7 +474,7 @@ export default function HeroSection({ isDark }: HeroSectionProps) {
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 border-2 border-[var(--brutal-border)] bg-[var(--accent)] px-2 py-0.5 text-[10px] font-extrabold uppercase shadow-[3px_3px_0_var(--brutal-shadow)]">
+                <span className="inline-flex items-center gap-1 border-2 border-[var(--brutal-border)] bg-[var(--secondary)] px-2 py-0.5 text-[10px] font-extrabold uppercase shadow-[3px_3px_0_var(--brutal-shadow)]">
                   <Sparkles size={10} />
                   Live
                 </span>

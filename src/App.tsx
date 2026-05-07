@@ -19,7 +19,7 @@ export default function App() {
         {/* Global Thermodynamic Background — single canvas for entire site */}
         <div className="fixed inset-0 z-[-1]">
           <ThermodynamicGrid
-            resolution={10}
+            resolution={8}
             coolingFactor={0.96}
             className="w-full h-full"
           />
