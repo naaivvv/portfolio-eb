@@ -29,6 +29,14 @@ interface Certification {
 }
 
 const certifications: Certification[] = [
+  // Technical Certifications
+  { title: "Certified Google AI Professional", issuer: "Google", date: "May 2026", variant: "accent" },
+  { title: "Vibe Coding — L2: Silver", issuer: "Lovable", date: "Mar 2026", variant: "accent" },
+  { title: "Career Accelerator: Technical Skills That Actually Matter", issuer: "TUP", date: "Feb 2026", variant: "accent" },
+  { title: "The Multi-Hyphenate Engineer — Beyond the Code", issuer: "TUP", date: "Mar 2026", variant: "accent" },
+  { title: "Digital Footprint: Impact of CpE on Modern Society", issuer: "TUP", date: "Feb 2026", variant: "accent" },
+  { title: "GIS Techniques & Spatial Data Analysis", issuer: "ICpEP.se-R6", date: "Mar 2023", variant: "accent" },
+
   // Awards & Honors
   { title: "2× DepEd Division Technolympics Web Page Designing Contest Champion", issuer: "DepEd", date: "", variant: "default" },
   { title: "Class Valedictorian (JHS & SHS)", issuer: "Academic", date: "", variant: "default" },
@@ -37,15 +45,8 @@ const certifications: Certification[] = [
   // Language & Proficiency
   { title: "HSK Level 4 — Chinese Proficiency", issuer: "CLEC", date: "Dec 2021", variant: "secondary" },
 
-  // Technical Certifications
-  { title: "Vibe Coding — L2: Silver", issuer: "Lovable", date: "Mar 2026", variant: "accent" },
-  { title: "Career Accelerator: Technical Skills That Actually Matter", issuer: "TUP", date: "Feb 2026", variant: "accent" },
-  { title: "The Multi-Hyphenate Engineer — Beyond the Code", issuer: "TUP", date: "Mar 2026", variant: "accent" },
-  { title: "Digital Footprint: Impact of CpE on Modern Society", issuer: "TUP", date: "Feb 2026", variant: "accent" },
-  { title: "GIS Techniques & Spatial Data Analysis", issuer: "ICpEP.se-R6", date: "Mar 2023", variant: "accent" },
-
   // Community & Events
-  { title: "Google DevFest 2023 Attendee", issuer: "GDG", date: "Oct 2023", variant: "outline" },
+  { title: "Google DevFest Attendee", issuer: "GDG", date: "Oct 2023", variant: "outline" },
   { title: "STEM Capstone Research Consultant", issuer: "Academic", date: "", variant: "outline" },
 ];
 
@@ -245,16 +246,16 @@ export default function AboutSection() {
                 {/* Category legend */}
                 <div className="flex flex-wrap gap-3 mb-5">
                   <div className="flex items-center gap-1.5 text-xs" style={{ color: "var(--muted-foreground)" }}>
+                    <ShieldCheck size={12} style={{ color: "var(--accent)" }} />
+                    <span>Technical</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs" style={{ color: "var(--muted-foreground)" }}>
                     <Trophy size={12} style={{ color: "var(--primary)" }} />
                     <span>Awards</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-xs" style={{ color: "var(--muted-foreground)" }}>
                     <Languages size={12} style={{ color: "var(--secondary)" }} />
                     <span>Language</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs" style={{ color: "var(--muted-foreground)" }}>
-                    <ShieldCheck size={12} style={{ color: "var(--accent)" }} />
-                    <span>Technical</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-xs" style={{ color: "var(--muted-foreground)" }}>
                     <Code2 size={12} style={{ color: "var(--foreground)" }} />

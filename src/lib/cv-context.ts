@@ -66,7 +66,7 @@ Edwin has built a diverse portfolio spanning AI/ML, IoT, web development, and da
 *   **The Multi-Hyphenate Engineer — Beyond the Code** (TUP, Mar 2026)
 *   **Digital Footprint: Impact of CpE on Modern Society** (TUP, Feb 2026)
 *   **GIS Techniques & Spatial Data Analysis** (ICpEP.se-R6, Mar 2023)
-*   **Google DevFest 2023 Attendee** (GDG, Oct 2023)
+*   **Google DevFest Attendee** (GDG, Oct 2023)
 *   **STEM Capstone Research Consultant** (Academic)
 `;
 
