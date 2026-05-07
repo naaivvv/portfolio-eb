@@ -160,7 +160,7 @@ export default function AboutSection() {
                 {quickStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="text-center p-4 rounded-xl glass glass-hover"
+                    className="text-center p-4 rounded-xl glass glass-hover transition-all duration-300 hover:scale-[1.03]"
                   >
                     <stat.icon size={18} className="mx-auto mb-2" style={{ color: "var(--primary)" }} />
                     <div className="text-2xl font-bold font-[var(--font-display)]" style={{ color: "var(--foreground)" }}>
