@@ -25,7 +25,11 @@ export default async function handler(req: Request) {
         "X-Title": "Edwin Bayog Portfolio",
       },
       body: JSON.stringify({
-        model: "meta-llama/llama-3.3-70b-instruct:free",
+        // CHANGE HERE: Replace "model" string with "models" array
+        models: [
+          "meta-llama/llama-3.3-70b-instruct:free",
+          "openrouter/free"
+        ],
         messages: body.messages,
         stream: true,
         max_tokens: 400,
