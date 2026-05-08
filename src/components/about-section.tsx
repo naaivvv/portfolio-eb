@@ -146,7 +146,7 @@ export default function AboutSection() {
                 </p>
                 <p className="text-base leading-relaxed font-medium" style={{ color: "var(--foreground)" }}>
                   Currently pursuing a{" "}
-                  <span className="font-bold underline decoration-4 underline-offset-4" style={{ decorationColor: "var(--primary)", color: "var(--secondary)" }}>BS in Computer Engineering</span> at
+                  <span className="font-bold underline decoration-4 underline-offset-4" style={{ textDecorationColor: "var(--primary)", color: "var(--secondary)" }}>BS in Computer Engineering</span> at
                   Technological University of the Philippines - Visayas while actively taking on freelance R&D consulting work — architecting thesis systems
                   involving embedded AI, IoT automation, and intelligent monitoring solutions.
                 </p>
