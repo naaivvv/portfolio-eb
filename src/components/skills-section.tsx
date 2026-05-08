@@ -95,7 +95,7 @@ function getIconSrc(skill: Skill, isDark: boolean): string {
 
 export default function SkillsSection({ isDark }: SkillsSectionProps) {
   return (
-    <section id="skills" className="relative w-full min-h-screen overflow-hidden bg-[var(--background)] py-20 border-t-8 border-b-8 border-[var(--foreground)]">
+    <section id="skills" className="relative w-full min-h-screen overflow-hidden bg-transparent py-20 border-t-8 border-b-8 border-[var(--foreground)]">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Header — center-aligned neo-brutalist */}
         <div className="mb-16 md:mb-20 text-center">
