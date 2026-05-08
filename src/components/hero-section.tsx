@@ -248,7 +248,7 @@ export default function HeroSection({ isDark }: HeroSectionProps) {
                 cooldownTime={4}
                 className="text-[clamp(2rem,5.5vw,4rem)] leading-none inline-flex items-start justify-start w-full max-w-full h-[1.3em]"
                 textClassName={cn(
-                  "font-black whitespace-nowrap text-left text-[color:var(--foreground)]"
+                  "font-black whitespace-nowrap text-left text-[color:var(--foreground)] uppercase"
                 )}
               />
             </div>

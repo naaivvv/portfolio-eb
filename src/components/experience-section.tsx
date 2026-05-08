@@ -69,29 +69,27 @@ const experiences = [
 export default function ExperienceSection() {
   return (
     <section id="experience" className="relative w-full min-h-screen overflow-hidden bg-transparent">
-      <div className="relative z-10 max-w-4xl mx-auto section-padding pointer-events-none">
+      <div className="relative z-10 max-w-6xl mx-auto section-padding pointer-events-none">
         <div className="pointer-events-auto">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="text-right mb-16 md:mb-20"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-wider mb-4">
-            <span style={{ color: "var(--foreground)" }}>Work </span>
-            <span style={{ color: "var(--primary)" }}>Experience</span>
+          <h2 className="font-[var(--font-display)] text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none">
+            <span style={{ color: "var(--foreground)" }}>WORK</span><br />
+            <span style={{ color: "var(--primary)" }}>EXPERIENCE</span>
           </h2>
-          <div className="w-20 h-0.5 mx-auto" style={{ background: "var(--primary)" }} />
         </motion.div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Timeline Line */}
           <div
-            className="absolute left-4 md:left-8 top-0 bottom-0 w-px"
-            style={{ background: "linear-gradient(to bottom, var(--primary), var(--accent), transparent)" }}
+            className="absolute left-4 md:left-8 top-0 bottom-0 border-l-4 border-[var(--border)]"
           />
 
           <div className="space-y-12">
@@ -106,16 +104,16 @@ export default function ExperienceSection() {
               >
                 {/* Timeline Dot */}
                 <div
-                  className="absolute left-2.5 md:left-6.5 top-2 w-3 h-3 rounded-full border-2"
+                  className="absolute left-[7px] md:left-[23px] top-2 w-4 h-4 rounded-none border-4"
                   style={{
                     borderColor: exp.accentColor,
                     background: "var(--background)",
-                    boxShadow: `0 0 10px ${exp.accentColor}`,
+                    boxShadow: `2px 2px 0 var(--brutal-shadow)`,
                   }}
                 />
 
                 {/* Card */}
-                <div className="glass rounded-2xl p-6 glass-hover transition-all duration-300">
+                <div className="bg-[var(--card)] border-4 border-[var(--border)] rounded-none p-6 shadow-[8px_8px_0_var(--brutal-shadow)] transition-all duration-300 hover:shadow-[12px_12px_0_var(--primary)] hover:-translate-y-1 hover:-translate-x-1">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
                     <div className="flex items-center gap-2">
                       <Briefcase size={14} style={{ color: exp.accentColor }} />

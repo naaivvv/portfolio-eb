@@ -80,6 +80,4 @@ Edwin has built a diverse portfolio spanning AI/ML, IoT, web development, and da
 *   **Digital Footprint: Impact of CpE on Modern Society** (TUP, Feb 2026)
 *   **Google DevFest Attendee** (GDG, Oct 2023)
 *   **STEM Capstone Research Consultant**
-\`;
-
-
+`;

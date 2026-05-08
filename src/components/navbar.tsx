@@ -53,12 +53,9 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
       className={cn(
         "fixed z-50 transition-all duration-300 left-0 right-0 mx-auto w-full md:w-[calc(100%-2rem)] max-w-6xl",
         scrolled
-          ? "top-2 glass"
-          : "top-0 bg-transparent"
+          ? "top-2 bg-[var(--background)] border-4 border-[var(--border)] shadow-[8px_8px_0_var(--brutal-shadow)] rounded-none"
+          : "top-0 bg-transparent border-4 border-transparent shadow-none"
       )}
-      style={{
-        borderColor: scrolled ? "var(--brutal-border)" : "transparent",
-      }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -78,10 +75,18 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-md transition-all duration-200",
-                  activeSection === link.href
-                    ? "text-[var(--primary)] bg-[var(--primary)]/10"
-                    : "text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-subtle-hover)]"
+                  "px-4 py-2 text-sm font-bold uppercase transition-all duration-200",
+                  scrolled
+                    ? cn(
+                        "border-2",
+                        activeSection === link.href
+                          ? "text-[var(--primary-foreground)] bg-[var(--primary)] border-[var(--border)] shadow-[4px_4px_0_var(--brutal-shadow)]"
+                          : "text-[var(--foreground)] bg-transparent border-transparent hover:bg-[var(--card)] hover:border-[var(--border)] hover:shadow-[4px_4px_0_var(--brutal-shadow)] hover:-translate-y-0.5 hover:-translate-x-0.5"
+                      )
+                    : cn(
+                        "rounded-md border-2 border-transparent hover:bg-[var(--surface-subtle)]",
+                        activeSection === link.href ? "text-[var(--primary)]" : "text-[var(--foreground)]"
+                      )
                 )}
               >
                 {link.label}
@@ -91,23 +96,15 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="ml-2 p-2 rounded-lg transition-all duration-300 cursor-pointer"
-              style={{
-                color: "var(--muted-foreground)",
-                background: "var(--surface-subtle)",
-                border: "1px solid var(--border-subtle)",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "var(--primary)";
-                e.currentTarget.style.borderColor = "var(--glass-hover-border)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "var(--muted-foreground)";
-                e.currentTarget.style.borderColor = "var(--border-subtle)";
-              }}
+              className={cn(
+                "ml-2 p-2 transition-all duration-200 cursor-pointer",
+                scrolled
+                  ? "bg-[var(--card)] border-2 border-[var(--border)] text-[var(--foreground)] shadow-[4px_4px_0_var(--brutal-shadow)] hover:shadow-[6px_6px_0_var(--primary)] hover:-translate-y-0.5 hover:-translate-x-0.5"
+                  : "bg-transparent border-2 border-transparent text-[var(--foreground)] hover:bg-[var(--surface-subtle)] rounded-lg"
+              )}
               aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
             >
-              {isDark ? <Sun size={16} /> : <Moon size={16} />}
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
 
@@ -115,23 +112,27 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg transition-colors duration-200 cursor-pointer"
-              style={{
-                color: "var(--muted-foreground)",
-                background: "var(--surface-subtle)",
-                border: "1px solid var(--border-subtle)",
-              }}
+              className={cn(
+                "p-2 transition-all duration-200 cursor-pointer",
+                scrolled
+                  ? "bg-[var(--card)] border-2 border-[var(--border)] text-[var(--foreground)] shadow-[4px_4px_0_var(--brutal-shadow)] hover:shadow-[6px_6px_0_var(--primary)] hover:-translate-y-0.5 hover:-translate-x-0.5"
+                  : "bg-transparent border-2 border-transparent text-[var(--foreground)] hover:bg-[var(--surface-subtle)] rounded-lg"
+              )}
               aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
             >
-              {isDark ? <Sun size={16} /> : <Moon size={16} />}
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <button
-              className="p-2 cursor-pointer"
-              style={{ color: "var(--muted-foreground)" }}
+              className={cn(
+                "p-2 transition-all duration-200 cursor-pointer",
+                scrolled
+                  ? "bg-[var(--card)] border-2 border-[var(--border)] text-[var(--foreground)] shadow-[4px_4px_0_var(--brutal-shadow)] hover:shadow-[6px_6px_0_var(--primary)] hover:-translate-y-0.5 hover:-translate-x-0.5"
+                  : "bg-transparent border-2 border-transparent text-[var(--foreground)] hover:bg-[var(--surface-subtle)] rounded-lg"
+              )}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -139,7 +140,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden glass animate-fade-in" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+        <div className="md:hidden bg-[var(--background)] border-b-4 border-x-4 border-[var(--border)] shadow-[8px_8px_0_var(--brutal-shadow)] animate-fade-in mx-2 mt-2 p-2">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <a
@@ -147,10 +148,10 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "block px-4 py-3 text-sm font-medium rounded-md transition-all duration-200",
+                  "block px-4 py-3 text-sm font-bold uppercase transition-all duration-200 border-2 mb-2",
                   activeSection === link.href
-                    ? "text-[var(--primary)] bg-[var(--primary)]/10"
-                    : "text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--surface-subtle-hover)]"
+                    ? "text-[var(--primary-foreground)] bg-[var(--primary)] border-[var(--border)] shadow-[4px_4px_0_var(--brutal-shadow)]"
+                    : "text-[var(--foreground)] bg-transparent border-transparent hover:bg-[var(--card)] hover:border-[var(--border)] hover:shadow-[4px_4px_0_var(--brutal-shadow)] hover:-translate-y-0.5 hover:-translate-x-0.5"
                 )}
               >
                 {link.label}

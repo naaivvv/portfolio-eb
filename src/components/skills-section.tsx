@@ -74,18 +74,17 @@ export default function SkillsSection({ isDark }: SkillsSectionProps) {
       <div className="relative z-10 max-w-6xl mx-auto section-padding pointer-events-none">
         <div className="pointer-events-auto">
           <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-16 md:mb-20"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-wider mb-4">
-              <span style={{ color: "var(--foreground)" }}>Tech </span>
-              <span style={{ color: "var(--primary)" }}>Arsenal</span>
+            <h2 className="font-[var(--font-display)] text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6">
+              <span style={{ color: "var(--foreground)" }}>TECH</span><br />
+              <span style={{ color: "var(--primary)" }}>ARSENAL</span>
             </h2>
-            <div className="w-20 h-0.5 mx-auto mb-4" style={{ background: "var(--primary)" }} />
-            <p className="text-sm max-w-lg mx-auto" style={{ color: "var(--muted-foreground)" }}>
+            <p className="text-sm sm:text-base max-w-lg mx-auto font-bold uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>
               Tools, frameworks, and platforms I build with.
             </p>
           </motion.div>

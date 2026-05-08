@@ -1,6 +1,26 @@
-import { Badge } from "@/components/ui/badge";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import * as Dialog from "@radix-ui/react-dialog";
+import { X, Brain, Cpu, Database, Network, Activity, Server, ArrowUpRight, BarChart } from "lucide-react";
+import {
+  SiPython,
+  SiTensorflow,
+  SiOpencv,
+  SiRaspberrypi,
+  SiReact,
+  SiCplusplus,
+  SiEspressif,
+  SiLaravel,
+  SiLivewire,
+  SiPhp,
+  SiBootstrap,
+  SiMysql,
+  SiVite,
+  SiDocker,
+  SiFlask,
+  SiGithub,
+  SiVuedotjs,
+} from "@icons-pack/react-simple-icons";
 
 // --- PROJECT DATA ---
 export type Project = {
@@ -12,9 +32,53 @@ export type Project = {
   category: string;
   year: string;
   image: string;
+  githubUrl?: string;
 };
 
 const getProjectImage = (name: string) => new URL(`../assets/projects/${name}`, import.meta.url).href;
+
+const getTechIcon = (tech: string, key: string, withLabel: boolean = false) => {
+  const t = tech.toLowerCase();
+  let IconComponent = Cpu;
+
+  if (t.includes("python")) IconComponent = SiPython;
+  else if (t.includes("tensorflow") || t.includes("deep learning") || t.includes("efficientnet") || t.includes("mobilenet")) IconComponent = SiTensorflow;
+  else if (t.includes("opencv") || t.includes("computer vision")) IconComponent = SiOpencv;
+  else if (t.includes("raspberry pi")) IconComponent = SiRaspberrypi;
+  else if (t.includes("react")) IconComponent = SiReact;
+  else if (t.includes("c++") || t.includes("embedded c")) IconComponent = SiCplusplus;
+  else if (t.includes("esp32")) IconComponent = SiEspressif;
+  else if (t.includes("laravel")) IconComponent = SiLaravel;
+  else if (t.includes("livewire")) IconComponent = SiLivewire;
+  else if (t.includes("php")) IconComponent = SiPhp;
+  else if (t.includes("bootstrap")) IconComponent = SiBootstrap;
+  else if (t.includes("mysql") || t.includes("sql")) IconComponent = SiMysql;
+  else if (t.includes("vite")) IconComponent = SiVite;
+  else if (t.includes("vue")) IconComponent = SiVuedotjs;
+  else if (t.includes("power bi") || t.includes("powerbi")) IconComponent = BarChart;
+  else if (t.includes("docker")) IconComponent = SiDocker;
+  else if (t.includes("flask")) IconComponent = SiFlask;
+  else if (t.includes("ai") || t.includes("nlp") || t.includes("word2vec") || t.includes("yolo")) IconComponent = Brain;
+  else if (t.includes("data") || t.includes("etl")) IconComponent = Database;
+  else if (t.includes("wireless") || t.includes("network")) IconComponent = Network;
+  else if (t.includes("health") || t.includes("eye") || t.includes("brain tumor")) IconComponent = Activity;
+  else if (t.includes("server") || t.includes("backend") || t.includes("full-stack")) IconComponent = Server;
+
+  if (withLabel) {
+    return (
+      <div key={key} className="flex items-center gap-1.5 px-2 py-1 bg-[var(--background)] border-2 border-[var(--border)] shadow-[2px_2px_0_var(--brutal-shadow)] text-[var(--foreground)] text-xs font-bold uppercase transition-all hover:border-[var(--primary)] hover:text-[var(--primary)] hover:-translate-y-0.5 hover:shadow-[3px_3px_0_var(--brutal-shadow)] cursor-default">
+        <IconComponent className="w-3.5 h-3.5" />
+        <span>{tech}</span>
+      </div>
+    );
+  }
+
+  return (
+    <div key={key} className="p-1.5 border-2 border-[var(--border)] rounded-none bg-[var(--background)] shadow-[2px_2px_0_var(--brutal-shadow)] text-[var(--foreground)] hover:text-[var(--primary)] hover:border-[var(--primary)] transition-all hover:-translate-y-0.5 hover:shadow-[3px_3px_0_var(--brutal-shadow)] cursor-default" title={tech}>
+      <IconComponent className="w-4 h-4" />
+    </div>
+  );
+};
 
 const projects: Project[] = [
   {
@@ -26,6 +90,7 @@ const projects: Project[] = [
     category: "AI / ML",
     year: "2026",
     image: getProjectImage("kidsentry.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "brightedge",
@@ -36,6 +101,7 @@ const projects: Project[] = [
     category: "AI / ML",
     year: "2026",
     image: getProjectImage("brightedge.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "snaid",
@@ -46,6 +112,7 @@ const projects: Project[] = [
     category: "AI / Embedded",
     year: "2026",
     image: getProjectImage("snaid.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "iot-vehicle",
@@ -56,6 +123,7 @@ const projects: Project[] = [
     category: "IoT / Hardware",
     year: "2025",
     image: getProjectImage("technodrive.jpg"),
+    githubUrl: "https://github.com",
   },
   {
     id: "sugarcane-monitor",
@@ -66,6 +134,7 @@ const projects: Project[] = [
     category: "IoT / Hardware",
     year: "2025",
     image: getProjectImage("isga.jpg"),
+    githubUrl: "https://github.com",
   },
   {
     id: "sentiment-analysis",
@@ -76,6 +145,7 @@ const projects: Project[] = [
     category: "AI / ML",
     year: "2025",
     image: getProjectImage("sentiment.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "light-pollution",
@@ -86,6 +156,7 @@ const projects: Project[] = [
     category: "AI / ML",
     year: "2025",
     image: getProjectImage("light.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "brain-tumor",
@@ -96,6 +167,7 @@ const projects: Project[] = [
     category: "AI / Computer Vision",
     year: "2025",
     image: getProjectImage("brain.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "smart-outlet",
@@ -106,6 +178,7 @@ const projects: Project[] = [
     category: "IoT / Hardware",
     year: "2024",
     image: getProjectImage("4gos.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "yieldwerx",
@@ -116,6 +189,7 @@ const projects: Project[] = [
     category: "Data Engineering",
     year: "2024",
     image: getProjectImage("yieldwerx.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "chmsu-cier",
@@ -126,16 +200,18 @@ const projects: Project[] = [
     category: "Web Development",
     year: "2024",
     image: getProjectImage("ciermis.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "wiredesk",
     title: "WireDesk CRM",
     subtitle: "Customer Relationship Management",
     description: "A dedicated customer relationship management solution for a business specializing in laptop wireless accessories. Features a fast, responsive dashboard tailored for tracking customer care tickets and service solutions.",
-    techStack: ["Laravel", "Vite", "PHP"],
+    techStack: ["Laravel", "Vue", "Vite", "PHP"],
     category: "Web Development",
     year: "2024",
     image: getProjectImage("wiredesk.jpeg"),
+    githubUrl: "https://github.com",
   },
   {
     id: "acrosys",
@@ -146,6 +222,7 @@ const projects: Project[] = [
     category: "Web Development",
     year: "2023",
     image: getProjectImage("acrosys.png"),
+    githubUrl: "https://github.com",
   },
   {
     id: "happy-teeth",
@@ -156,6 +233,7 @@ const projects: Project[] = [
     category: "Web Development",
     year: "2023",
     image: getProjectImage("happy.png"),
+    githubUrl: "https://github.com",
   },
 ];
 
@@ -184,7 +262,7 @@ export default function ProjectsSection() {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, -(totalRowWidth - window.innerWidth + 80)] // 80px padding buffer
+    [0, -(totalRowWidth - (typeof window !== "undefined" ? window.innerWidth : 1200) + 80)] // 80px padding buffer
   );
 
   return (
@@ -198,16 +276,17 @@ export default function ProjectsSection() {
       {/* Sticky viewport — pins while user scrolls through the tall section */}
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col pointer-events-none">
 
-        {/* Header — stays centered and visible */}
-        <div className="relative z-10 pt-20 pb-8 px-6 text-center pointer-events-auto">
-          <h2 className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-wider mb-4">
-            <span style={{ color: "var(--foreground)" }}>Featured </span>
-            <span style={{ color: "var(--primary)" }}>Projects</span>
-          </h2>
-          <div className="w-20 h-0.5 mx-auto mb-4" style={{ background: "var(--primary)" }} />
-          <p className="text-sm max-w-xl mx-auto" style={{ color: "var(--muted-foreground)" }}>
-            A curated selection of my work spanning AI, IoT, web development, and data engineering.
-          </p>
+        {/* Header — center-aligned neo-brutalist */}
+        <div className="relative z-10 pt-20 pb-8 pointer-events-auto">
+          <div className="text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-[var(--font-display)] text-5xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">
+              <span style={{ color: "var(--foreground)" }}>FEATURED</span><br />
+              <span style={{ color: "var(--primary)" }}>PROJECTS</span>
+            </h2>
+            <p className="text-sm sm:text-base max-w-xl mx-auto font-medium uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>
+              A curated selection of my work spanning AI, IoT, web development, and data engineering.
+            </p>
+          </div>
         </div>
 
         {/* Horizontal scroll track */}
@@ -217,64 +296,104 @@ export default function ProjectsSection() {
             style={{ x }}
           >
             {projects.map((project) => (
-              <div
-                key={project.id}
-                className="pointer-events-auto group flex-shrink-0 glass rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_var(--glass-hover-shadow)]"
-                style={{ width: `${CARD_W}px`, borderColor: "var(--border-subtle)" }}
-              >
-                {/* Image */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden" style={{ background: "var(--surface-subtle)" }}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  {/* Year badge */}
-                  <div className="absolute top-3 right-3">
-                    <span
-                      className="text-[10px] font-bold tracking-widest px-2.5 py-1 rounded-full backdrop-blur-md"
-                      style={{ background: "var(--badge-overlay-bg)", color: "var(--primary)", border: "1px solid var(--glass-hover-border)" }}
-                    >
-                      {project.year}
-                    </span>
-                  </div>
-                  {/* Category badge */}
-                  <div className="absolute top-3 left-3">
-                    <span
-                      className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full backdrop-blur-md"
-                      style={{ background: "var(--badge-overlay-bg)", color: "var(--muted-foreground)", border: "1px solid var(--border-subtle)" }}
-                    >
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-5">
-                  <h3
-                    className="font-[var(--font-display)] text-base font-bold tracking-wide mb-0.5 group-hover:text-[var(--primary)] transition-colors duration-300"
-                    style={{ color: "var(--foreground)" }}
+              <Dialog.Root key={project.id}>
+                <Dialog.Trigger asChild>
+                  <div
+                    className="pointer-events-auto cursor-pointer flex flex-col flex-shrink-0 bg-[var(--card)] rounded-none border-4 border-[var(--border)] transition-all duration-300 shadow-[8px_8px_0_var(--brutal-shadow)] hover:shadow-[12px_12px_0_var(--primary)] hover:-translate-y-1 hover:-translate-x-1 group"
+                    style={{ width: `${CARD_W}px` }}
                   >
-                    {project.title}
-                  </h3>
-                  <p className="text-xs font-medium mb-3" style={{ color: "var(--secondary)" }}>
-                    {project.subtitle}
-                  </p>
-                  <p className="text-xs leading-relaxed mb-4 line-clamp-3" style={{ color: "var(--muted-foreground)" }}>
-                    {project.description}
-                  </p>
+                    {/* Image */}
+                    <div className="relative w-full aspect-[16/10] overflow-hidden border-b-4 border-[var(--border)] bg-[var(--muted)]">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+                        loading="lazy"
+                      />
+                      {/* Year badge */}
+                      <div className="absolute top-3 right-3">
+                        <span className="text-[10px] font-black tracking-widest px-2.5 py-1 bg-[var(--background)] border-2 border-[var(--border)] shadow-[2px_2px_0_var(--primary)] text-[var(--foreground)] uppercase">
+                          {project.year}
+                        </span>
+                      </div>
+                      {/* Category badge */}
+                      <div className="absolute top-3 left-3">
+                        <span className="text-[10px] font-black tracking-widest px-2.5 py-1 bg-[var(--primary)] border-2 border-[var(--border)] shadow-[2px_2px_0_var(--foreground)] text-[var(--primary-foreground)] uppercase">
+                          {project.category}
+                        </span>
+                      </div>
+                    </div>
 
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.techStack.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-[10px]">
-                        {tag}
-                      </Badge>
-                    ))}
+                    {/* Content */}
+                    <div className="p-5 flex flex-col flex-grow">
+                      <h3 className="font-[var(--font-display)] text-xl font-black uppercase tracking-tighter mb-1 text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-200 line-clamp-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-xs font-bold uppercase mb-4 text-[var(--secondary)] line-clamp-1">
+                        {project.subtitle}
+                      </p>
+
+                      {/* Tech Stack Icons */}
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {project.techStack.map((tag, idx) => getTechIcon(tag, `card-${project.id}-${idx}`))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </Dialog.Trigger>
+
+                <Dialog.Portal>
+                  <Dialog.Overlay className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 pointer-events-auto" />
+                  <Dialog.Content className="fixed left-[50%] top-[50%] z-[110] grid w-[90vw] max-w-2xl translate-x-[-50%] translate-y-[-50%] bg-[var(--card)] border-4 border-[var(--border)] shadow-[16px_16px_0_var(--brutal-shadow)] p-0 rounded-none duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] max-h-[90vh] overflow-y-auto pointer-events-auto">
+                    
+                    <div className="relative w-full aspect-[16/9] border-b-4 border-[var(--border)] bg-[var(--muted)]">
+                      <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                      
+                      <Dialog.Close className="absolute top-4 right-4 bg-[var(--background)] border-2 border-[var(--border)] p-1.5 shadow-[4px_4px_0_var(--primary)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_var(--primary)] transition-all cursor-pointer text-[var(--foreground)] focus:outline-none">
+                        <X className="h-5 w-5" />
+                        <span className="sr-only">Close</span>
+                      </Dialog.Close>
+                    </div>
+
+                    <div className="p-6 sm:p-8 flex flex-col gap-6">
+                      <div>
+                        <Dialog.Title className="font-[var(--font-display)] text-3xl sm:text-4xl font-black uppercase tracking-tighter text-[var(--foreground)] mb-2">
+                          {project.title}
+                        </Dialog.Title>
+                        <Dialog.Description className="text-sm sm:text-base font-bold uppercase text-[var(--primary)]">
+                          {project.subtitle}
+                        </Dialog.Description>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {project.techStack.map((tag, idx) => getTechIcon(tag, `modal-${project.id}-${idx}`, true))}
+                      </div>
+
+                      <p className="text-sm sm:text-base leading-relaxed text-[var(--muted-foreground)] border-l-4 border-[var(--primary)] pl-4">
+                        {project.description}
+                      </p>
+
+                      <div className="flex flex-col sm:flex-row gap-4 mt-4 pt-6 border-t-4 border-[var(--border)]">
+                        <a 
+                          href={project.githubUrl || "#"} 
+                          target="_blank" 
+                          rel="noreferrer"
+                          className="inline-flex items-center justify-center gap-2 bg-[var(--foreground)] text-[var(--background)] font-black uppercase px-6 py-3 border-4 border-[var(--border)] shadow-[6px_6px_0_var(--primary)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0_var(--primary)] transition-all"
+                        >
+                          <SiGithub className="w-5 h-5" />
+                          View Source
+                        </a>
+                        <a 
+                          href="#" 
+                          className="inline-flex items-center justify-center gap-2 bg-[var(--background)] text-[var(--foreground)] font-black uppercase px-6 py-3 border-4 border-[var(--border)] shadow-[6px_6px_0_var(--brutal-shadow)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0_var(--brutal-shadow)] transition-all"
+                        >
+                          <ArrowUpRight className="w-5 h-5" />
+                          Live Demo
+                        </a>
+                      </div>
+                    </div>
+                  </Dialog.Content>
+                </Dialog.Portal>
+              </Dialog.Root>
             ))}
           </motion.div>
         </div>

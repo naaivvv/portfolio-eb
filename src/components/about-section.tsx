@@ -76,19 +76,19 @@ export default function AboutSection() {
         <div className="pointer-events-auto">
           {/* Section Header */}
           <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="text-left mb-16 md:mb-20"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <h2
-              className="font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-wider mb-4"
+              className="font-[var(--font-display)] text-6xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter leading-none"
               style={{ color: "var(--foreground)" }}
             >
-              About <span style={{ color: "var(--primary)" }}>Me</span>
+              ABOUT<br />
+              <span style={{ color: "var(--primary)" }}>ME</span>
             </h2>
-            <div className="w-20 h-0.5 mx-auto" style={{ background: "var(--primary)" }} />
           </motion.div>
 
           {/* ─── Top Row: Portrait + Summary ─── */}
@@ -102,37 +102,34 @@ export default function AboutSection() {
             {/* Portrait Card */}
             <div className="lg:col-span-4 flex">
               <div
-                className="relative glass rounded-2xl p-1.5 overflow-hidden w-full"
-                style={{ border: "1px solid var(--glass-border)" }}
+                className="relative bg-[var(--card)] border-4 border-[var(--border)] p-1.5 shadow-[8px_8px_0_var(--brutal-shadow)] rounded-none w-full"
               >
                 <img
                   src={portraitImg}
                   alt="Edwin Jr. P. Bayog — Computer Engineer"
-                  className="w-full h-full rounded-xl object-cover"
+                  className="w-full h-full object-cover rounded-none"
                   loading="lazy"
                   width={280}
                   height={373}
                 />
                 {/* Overlay info strip */}
                 <div
-                  className="absolute bottom-2 left-2 right-2 rounded-xl px-4 py-3 flex items-center gap-3"
+                  className="absolute bottom-2 left-2 right-2 border-2 border-white px-4 py-3 flex items-center gap-3 rounded-none"
                   style={{
-                    background: "rgba(0,0,0,0.65)",
-                    backdropFilter: "blur(12px)",
-                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "var(--foreground)",
                   }}
                 >
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm font-bold truncate" style={{ color: "#fff" }}>
+                    <div className="text-sm font-bold truncate" style={{ color: "var(--background)" }}>
                       Edwin Jr. P. Bayog
                     </div>
-                    <div className="text-xs truncate" style={{ color: "rgba(255,255,255,0.7)" }}>
+                    <div className="text-xs font-medium truncate" style={{ color: "var(--background)" }}>
                       Computer Engineer
                     </div>
                   </div>
                   <div
-                    className="w-2 h-2 rounded-full shrink-0 animate-glow-pulse"
-                    style={{ background: "var(--accent)" }}
+                    className="w-3 h-3 border-2 border-white rounded-none shrink-0 animate-glow-pulse"
+                    style={{ background: "var(--primary)" }}
                   />
                 </div>
               </div>
@@ -140,16 +137,16 @@ export default function AboutSection() {
 
             {/* Summary + Stats */}
             <div className="lg:col-span-8 flex flex-col justify-between gap-6">
-              <div className="glass rounded-2xl p-8">
-                <p className="text-base leading-relaxed mb-6" style={{ color: "var(--muted-foreground)" }}>
+              <div className="bg-[var(--card)] border-4 border-[var(--border)] p-8 rounded-none shadow-[8px_8px_0_var(--brutal-shadow)]">
+                <p className="text-base leading-relaxed mb-6 font-medium" style={{ color: "var(--foreground)" }}>
                   Versatile Computer Engineer skilled in bridging the gap between hardware and software development.
                   Specialized in creating intelligent applications that analyze data and automate tasks to improve
                   safety and decision-making. Strong background in research and development, with a track record
                   of delivering successful projects in dynamic, fast-paced environments.
                 </p>
-                <p className="text-base leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
+                <p className="text-base leading-relaxed font-medium" style={{ color: "var(--foreground)" }}>
                   Currently pursuing a{" "}
-                  <span style={{ color: "var(--secondary)" }}>BS in Computer Engineering</span> at
+                  <span className="font-bold underline decoration-4 underline-offset-4" style={{ decorationColor: "var(--primary)", color: "var(--secondary)" }}>BS in Computer Engineering</span> at
                   Technological University of the Philippines - Visayas while actively taking on freelance R&D consulting work — architecting thesis systems
                   involving embedded AI, IoT automation, and intelligent monitoring solutions.
                 </p>
@@ -160,13 +157,13 @@ export default function AboutSection() {
                 {quickStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="text-center p-4 rounded-xl glass glass-hover transition-all duration-300 hover:scale-[1.03]"
+                    className="text-center p-4 bg-[var(--card)] border-4 border-[var(--border)] rounded-none shadow-[4px_4px_0_var(--brutal-shadow)] transition-all duration-300 hover:shadow-[8px_8px_0_var(--primary)] hover:-translate-y-1 hover:-translate-x-1"
                   >
-                    <stat.icon size={18} className="mx-auto mb-2" style={{ color: "var(--primary)" }} />
-                    <div className="text-2xl font-bold font-[var(--font-display)]" style={{ color: "var(--foreground)" }}>
+                    <stat.icon size={24} className="mx-auto mb-3" style={{ color: "var(--primary)" }} />
+                    <div className="text-3xl font-black font-[var(--font-display)]" style={{ color: "var(--foreground)" }}>
                       {stat.value}
                     </div>
-                    <div className="text-xs mt-1" style={{ color: "var(--muted-foreground)" }}>
+                    <div className="text-xs font-bold uppercase mt-1 tracking-wider" style={{ color: "var(--foreground)" }}>
                       {stat.label}
                     </div>
                   </div>
@@ -185,7 +182,7 @@ export default function AboutSection() {
           >
             {/* Education */}
             <div className="lg:col-span-5">
-              <div className="glass rounded-2xl p-6 h-full">
+              <div className="bg-[var(--card)] border-4 border-[var(--border)] rounded-none p-6 shadow-[8px_8px_0_var(--brutal-shadow)] h-full">
                 <h3
                   className="font-[var(--font-display)] text-sm font-semibold tracking-widest uppercase mb-6 flex items-center gap-2"
                   style={{ color: "var(--secondary)" }}
@@ -224,7 +221,7 @@ export default function AboutSection() {
 
             {/* Certifications & Awards */}
             <div className="lg:col-span-7">
-              <div className="glass rounded-2xl p-6 h-full">
+              <div className="bg-[var(--card)] border-4 border-[var(--border)] rounded-none p-6 shadow-[8px_8px_0_var(--brutal-shadow)] h-full">
                 <h3
                   className="font-[var(--font-display)] text-sm font-semibold tracking-widest uppercase mb-6 flex items-center gap-2"
                   style={{ color: "var(--secondary)" }}
@@ -257,7 +254,7 @@ export default function AboutSection() {
                     <Badge
                       key={cert.title}
                       variant={cert.variant}
-                      className="text-xs py-1 px-3 cursor-default transition-all duration-200 hover:scale-105"
+                      className="text-xs font-bold py-1 px-3 cursor-default transition-all duration-200 border-2 shadow-[2px_2px_0_var(--brutal-shadow)] hover:shadow-[4px_4px_0_var(--primary)] hover:-translate-y-0.5"
                       title={cert.date ? `${cert.issuer} · ${cert.date}` : cert.issuer}
                     >
                       {cert.title}
