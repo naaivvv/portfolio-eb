@@ -90,7 +90,7 @@ const projects: Project[] = [
     category: "AI / ML",
     year: "2026",
     image: getProjectImage("kidsentry.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv",
   },
   {
     id: "brightedge",
@@ -101,7 +101,7 @@ const projects: Project[] = [
     category: "AI / ML",
     year: "2026",
     image: getProjectImage("brightedge.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv",
   },
   {
     id: "snaid",
@@ -112,7 +112,7 @@ const projects: Project[] = [
     category: "AI / Embedded",
     year: "2026",
     image: getProjectImage("snaid.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv",
   },
   {
     id: "iot-vehicle",
@@ -123,7 +123,7 @@ const projects: Project[] = [
     category: "IoT / Hardware",
     year: "2025",
     image: getProjectImage("technodrive.jpg"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv",
   },
   {
     id: "sugarcane-monitor",
@@ -134,7 +134,7 @@ const projects: Project[] = [
     category: "IoT / Hardware",
     year: "2025",
     image: getProjectImage("isga.jpg"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv/isga_v3",
   },
   {
     id: "sentiment-analysis",
@@ -145,7 +145,7 @@ const projects: Project[] = [
     category: "AI / ML",
     year: "2025",
     image: getProjectImage("sentiment.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv/Project-Sentiment-Analysis-Tensorflow-",
   },
   {
     id: "light-pollution",
@@ -156,7 +156,7 @@ const projects: Project[] = [
     category: "AI / ML",
     year: "2025",
     image: getProjectImage("light.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv/light_intensity_prediction_app",
   },
   {
     id: "brain-tumor",
@@ -167,7 +167,7 @@ const projects: Project[] = [
     category: "AI / Computer Vision",
     year: "2025",
     image: getProjectImage("brain.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv/brain-tumor-mri-classification",
   },
   {
     id: "smart-outlet",
@@ -178,7 +178,7 @@ const projects: Project[] = [
     category: "IoT / Hardware",
     year: "2024",
     image: getProjectImage("4gos.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv/4gos",
   },
   {
     id: "yieldwerx",
@@ -189,7 +189,7 @@ const projects: Project[] = [
     category: "Data Engineering",
     year: "2024",
     image: getProjectImage("yieldwerx.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv",
   },
   {
     id: "chmsu-cier",
@@ -200,7 +200,7 @@ const projects: Project[] = [
     category: "Web Development",
     year: "2024",
     image: getProjectImage("ciermis.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv",
   },
   {
     id: "wiredesk",
@@ -211,7 +211,7 @@ const projects: Project[] = [
     category: "Web Development",
     year: "2024",
     image: getProjectImage("wiredesk.jpeg"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv/WireDesk",
   },
   {
     id: "acrosys",
@@ -222,7 +222,7 @@ const projects: Project[] = [
     category: "Web Development",
     year: "2023",
     image: getProjectImage("acrosys.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv/ACROSYS",
   },
   {
     id: "happy-teeth",
@@ -233,7 +233,7 @@ const projects: Project[] = [
     category: "Web Development",
     year: "2023",
     image: getProjectImage("happy.png"),
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/naaivvv/Happy-Teeth-Dental-Clinic",
   },
 ];
 
