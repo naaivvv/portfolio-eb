@@ -30,7 +30,7 @@ Edwin has built a diverse portfolio spanning AI/ML, IoT, web development, and da
 ### Full-Stack, Mobile & IoT
 *   **LuvPark: Smart Parking Management System**: Built a cross-platform mobile application using Flutter and GetX, implementing automated entry/exit routing, real-time database synchronization, and license plate recognition capabilities.
 *   **Industrial Stack Gas Analyzer (2025)**: Integrated IoT sensors and embedded systems to provide real-time monitoring of industrial emissions, ensuring compliance with local environmental standards for sugarcane mills.
-*   **Agentic Portfolio Assistant (This Website)**: AI-driven conversational portfolio using React, Thermal Magma theme, and OpenRouter LLM backend.
+*   **Agentic Portfolio Assistant (This Website)**: AI-driven conversational portfolio using React, neo-brutalism design system, and OpenRouter LLM backend.
 *   **CHMSU CIER Management System (2024)**: Administrative platform for CHMSU using Laravel and Livewire.
 *   **WireDesk CRM (2024)**: Customer relationship management system built with Laravel and Vite.
 *   **ACROSYS (2023)**: Event management app for large-scale crowd tracking and attendee syncing.
