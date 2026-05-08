@@ -54,7 +54,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
         "fixed z-50 transition-all duration-300 left-0 right-0 mx-auto w-full md:w-[calc(100%-2rem)] max-w-6xl",
         scrolled
           ? "top-2 bg-[var(--background)] border-4 border-[var(--border)] shadow-[8px_8px_0_var(--brutal-shadow)] rounded-none"
-          : "top-0 bg-transparent border-4 border-transparent shadow-none"
+          : "top-0 bg-transparent border-transparent shadow-none rounded-none"
       )}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,15 +78,15 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
                   "px-4 py-2 text-sm font-bold uppercase transition-all duration-200",
                   scrolled
                     ? cn(
-                        "border-2",
-                        activeSection === link.href
-                          ? "text-[var(--primary-foreground)] bg-[var(--primary)] border-[var(--border)] shadow-[4px_4px_0_var(--brutal-shadow)]"
-                          : "text-[var(--foreground)] bg-transparent border-transparent hover:bg-[var(--card)] hover:border-[var(--border)] hover:shadow-[4px_4px_0_var(--brutal-shadow)] hover:-translate-y-0.5 hover:-translate-x-0.5"
-                      )
+                      "border-2",
+                      activeSection === link.href
+                        ? "text-[var(--primary-foreground)] bg-[var(--primary)] border-[var(--border)] shadow-[4px_4px_0_var(--brutal-shadow)]"
+                        : "text-[var(--foreground)] bg-transparent border-transparent hover:bg-[var(--card)] hover:border-[var(--border)] hover:shadow-[4px_4px_0_var(--brutal-shadow)] hover:-translate-y-0.5 hover:-translate-x-0.5"
+                    )
                     : cn(
-                        "rounded-md border-2 border-transparent hover:bg-[var(--surface-subtle)]",
-                        activeSection === link.href ? "text-[var(--primary)]" : "text-[var(--foreground)]"
-                      )
+                      "border-2 border-transparent hover:bg-[var(--surface-subtle)]",
+                      activeSection === link.href ? "text-[var(--primary)]" : "text-[var(--foreground)]"
+                    )
                 )}
               >
                 {link.label}
@@ -100,7 +100,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
                 "ml-2 p-2 transition-all duration-200 cursor-pointer",
                 scrolled
                   ? "bg-[var(--card)] border-2 border-[var(--border)] text-[var(--foreground)] shadow-[4px_4px_0_var(--brutal-shadow)] hover:shadow-[6px_6px_0_var(--primary)] hover:-translate-y-0.5 hover:-translate-x-0.5"
-                  : "bg-transparent border-2 border-transparent text-[var(--foreground)] hover:bg-[var(--surface-subtle)] rounded-lg"
+                  : "bg-transparent border-2 border-transparent text-[var(--foreground)] hover:bg-[var(--surface-subtle)]"
               )}
               aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
             >
