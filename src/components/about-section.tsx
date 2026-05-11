@@ -31,7 +31,6 @@ interface Certification {
 const certifications: Certification[] = [
   // Technical Certifications
   { title: "Certified Google AI Professional", issuer: "Google", date: "May 2026", variant: "accent" },
-  { title: "Vibe Coding — L2: Silver", issuer: "Lovable", date: "Mar 2026", variant: "accent" },
   { title: "Career Accelerator: Technical Skills That Actually Matter", issuer: "TUP", date: "Feb 2026", variant: "accent" },
   { title: "The Multi-Hyphenate Engineer — Beyond the Code", issuer: "TUP", date: "Mar 2026", variant: "accent" },
   { title: "Digital Footprint: Impact of CpE on Modern Society", issuer: "TUP", date: "Feb 2026", variant: "accent" },
@@ -46,7 +45,6 @@ const certifications: Certification[] = [
   { title: "HSK Level 4 — Chinese Proficiency", issuer: "CLEC", date: "Dec 2021", variant: "secondary" },
 
   // Community & Events
-  { title: "Google DevFest Attendee", issuer: "GDG", date: "Oct 2023", variant: "outline" },
   { title: "STEM Capstone Research Consultant", issuer: "Academic", date: "", variant: "outline" },
 ];
 

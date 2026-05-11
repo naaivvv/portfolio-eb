@@ -74,10 +74,8 @@ Edwin has built a diverse portfolio spanning AI/ML, IoT, web development, and da
 *   **Class Valedictorian (JHS & SHS)**
 *   **2-Time Division Champion (Web Design)** (DepEd Division Technolympics)
 *   **3rd Runner-up in Ideasparks Pitching Contest**
-*   **Vibe Coding — L2: Silver** (Lovable, Mar 2026)
 *   **Career Accelerator: Technical Skills That Actually Matter** (TUP, Feb 2026)
 *   **The Multi-Hyphenate Engineer — Beyond the Code** (TUP, Mar 2026)
 *   **Digital Footprint: Impact of CpE on Modern Society** (TUP, Feb 2026)
-*   **Google DevFest Attendee** (GDG, Oct 2023)
 *   **STEM Capstone Research Consultant**
 `;
